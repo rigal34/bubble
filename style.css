@@ -1,0 +1,39 @@
+body {/*tout ce qui dépasse du body on ne veux pas le voir pour pas que les bulles ne casse la page*/
+overflow: hidden;
+min-height: 100vh;
+cursor: crosshair;
+}
+
+
+/*je vais créer une classe  pour mon span qui sert de bulle*/
+.bubble{
+position: absolute;
+border-radius: 300px;
+background: rgba(255, 166, 0, 0.6);
+opacity: 0;
+animation: anim 8s forwards;/*forwards permet de terminer leur parcours complétement de mon body*/
+filter: hue-rotate(0deg);/*me fais partir la couleur de o° qui est la couleur normal qui part de sa propre couleur*/
+
+}
+
+@keyframes anim{  /*quand j 'injecte le style qui vient de animation à keyframes et bien to tu vas jusqu'à top -250px sa va faire monter ma bulle vers le haut*/
+to {
+
+top: -250px;
+left: var(--left);/*j'injecte une variable pour pouvoir intervenir sur mon keyframe pour javascript, comme pour befor::*/
+opacity: 1;
+filter: hue-rotate(720deg);/* fais arriver la couleur de ma roue chromatique à 720° */
+
+}
+
+
+}
+
+h3{
+
+font-size: 10rem;
+text-align: center;
+margin-top: 20px;
+color: rgba(128, 128, 128, 0.555);
+
+}
